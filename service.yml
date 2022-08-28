@@ -7,5 +7,5 @@ spec:
   selector:
     app: projet1
   ports:
-  - port: 3000
+  - port: 8080
     targetPort: 4000
