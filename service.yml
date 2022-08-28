@@ -1,0 +1,11 @@
+kebernetes apiVersion: v1
+kind: Service
+metadata:
+  name: projet1
+spec:
+  type : LoadBalancer
+  selector:
+    app: projet1
+  ports:
+  - port: 3000
+    targetPort: 4000

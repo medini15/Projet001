@@ -1,0 +1,24 @@
+kubernetes apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projet1
+
+spec:
+  replicas : 2
+  selector:
+    matchLabels:
+      app: projet1
+  template:
+    metadata:
+      labels:
+        app: projet1
+    spec:
+      containers:
+      - name: projet1
+        image: "97397839/projet1"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 30000

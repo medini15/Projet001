@@ -1,17 +1,12 @@
 FROM node:alpine
-
-# Create app directory
-WORKDIR /app
-
-# Copy
-COPY package*.json package-lock.json parkings.js ./
-
-# RUN npm 
+#CREATION APP DIRECTORY
+WORKDIR /APP
+#COPY
+COPY package*.json  package-lock.json parkings.json ./
+#RUN NPM
 RUN npm install
-
-# Bundle app source
+#BUNDLE APP SOURCE
 COPY . ./
-
-# RUN Server
+#RUN SERVER
 EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD ["node", "index.js"]
