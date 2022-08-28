@@ -1,24 +1,25 @@
-kubernetes apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: projet1
-
+  name: k8s-web-hello
 spec:
-  replicas : 2
+  replicas: 5
   selector:
     matchLabels:
-      app: projet1
+      app: k8s-web-hello
+      version: 1.0.0
   template:
     metadata:
       labels:
-        app: projet1
+        app: k8s-web-hello
+        version: 1.0.0
     spec:
       containers:
-      - name: projet1
+      - name: k8s-web-hello
         image: "97397839/projet1"
         resources:
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "250m"
         ports:
-        - containerPort: 30000
+        - containerPort: 3000
