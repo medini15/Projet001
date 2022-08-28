@@ -1,11 +1,11 @@
-kebernetes apiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
-  name: projet1
+  name: k8s-web-hello
 spec:
-  type : LoadBalancer
+  type: LoadBalancer
   selector:
-    app: projet1
+    app: k8s-web-hello
   ports:
-  - port: 8080
-    targetPort: 4000
+  - port: 3030
+    targetPort: 3000
